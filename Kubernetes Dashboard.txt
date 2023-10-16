@@ -55,5 +55,5 @@ change : http to https
 svc: change port to 9090 
 http to https 
 
-
+https://vmwire.com/2022/02/07/running-kubernetes-dashboard-with-signed-certificates/
 
