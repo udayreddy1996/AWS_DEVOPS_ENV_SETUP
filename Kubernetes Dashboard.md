@@ -1,0 +1,52 @@
+Setup Kubernetes Dashboard:
+
+
+
+1 ) Install Helm
+
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+
+2) Add Kubernetes Dashboard Helm Repository
+
+helm repo list
+
+3) Install Kubernetes Dashboard
+
+helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+
+4)  Generate Token for Kubernetes Dashboard
+
+ vi k8s-dashboard-account.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system
+
+Next create service account by running following command:
+
+kubectl apply -f k8s-dashboard-account.yaml
+
+Now, generate the token for admin-user, run
+
+kubectl -n kube-system  create token admin-user
+
+kubectl create rolebinding udayrole --serviceaccount kubernetes-dashboard:kubernetes-dashboard --clusterrole view -n kubernetes-dashboard --dry-run=client -o yaml
+
+kubectl create clusterrolebinding udayrole --serviceaccount kubernetes-dashboard:kubernetes-dashboard --clusterrole view -n kubernetes-dashboard
+
+
+
