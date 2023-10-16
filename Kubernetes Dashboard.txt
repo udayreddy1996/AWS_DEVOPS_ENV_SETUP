@@ -1,6 +1,5 @@
 Setup Kubernetes Dashboard:
-
-
+Youtube Link: https://youtu.be/GcNcJNGvBuw?si=5W8OVbd0StJEsS05
 
 1 ) Install Helm
 
