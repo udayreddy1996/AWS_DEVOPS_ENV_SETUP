@@ -1,0 +1,26 @@
+Setup Helm Chart 
+
+1. Use wget to download the latest version of Helm. The download links for all supported architectures are available on the official website (https://github.com/helm/helm/releases). For example, if your system uses the x64 architecture, type the following in the terminal to download the 3.9.3 version of Helm:
+
+wget https://get.helm.sh/helm-v3.9.3-linux-amd64.tar.gz
+
+2. Next, unpack the Helm file using the Linux tar command:
+
+tar xvf helm-v3.9.3-linux-amd64.tar.gz
+
+3. Move the linux-amd64/helm file to the /usr/local/bin directory:
+
+sudo mv linux-amd64/helm /usr/local/bin
+
+4. Remove the downloaded file using the following command:
+
+rm helm-v3.4.1-linux-amd64.tar.gz
+
+5. Remove the linux-amd64 directory to clean up space by running:
+
+rm -rf linux-amd64
+
+6. Finally, verify you have successfully installed Helm by checking the version of the software:
+
+helm version
+
