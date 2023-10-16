@@ -1,0 +1,15 @@
+https://youtu.be/3yIDT5w2nCg
+
+Setup Prometheus and Grafana:
+
+1. wget https://get.helm.sh/helm-v3.10.1-linux-amd64.tar.gz
+2. tar -xvzf helm-v3.10.1-linux-amd64.tar.gz
+3. cd linux-amd64
+4. ./helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+5. ./helm repo update
+6. ./helm install prometheus prometheus-community/kube-prometheus-stack
+7. kubectl get configmaps prometheus-prometheus-kube-prometheus-prometheus-rulefiles-0 -o yaml > config.yaml
+8. kubectl get service prometheus-kube-prometheus-prometheus --output yaml> prometheus.yaml
+9. kubectl get service prometheus-grafana --output yaml>grafana.yaml
+
+default id (admin) and pass (prom-operator)
