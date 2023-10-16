@@ -47,5 +47,13 @@ kubectl create rolebinding udayrole --serviceaccount kubernetes-dashboard:kubern
 
 kubectl create clusterrolebinding udayrole --serviceaccount kubernetes-dashboard:kubernetes-dashboard --clusterrole view -n kubernetes-dashboard
 
+deployment:
+--insecure-port=9090
+remove cretificates
+change : http to https
+
+svc: change port to 9090 
+http to https 
+
 
 
