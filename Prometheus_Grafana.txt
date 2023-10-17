@@ -13,3 +13,5 @@ Setup Prometheus and Grafana:
 9. kubectl get service prometheus-grafana --output yaml>grafana.yaml
 
 default id (admin) and pass (prom-operator)
+
+Prometheus: 3662 (code for access data)
