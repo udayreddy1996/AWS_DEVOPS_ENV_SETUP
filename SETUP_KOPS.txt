@@ -1,3 +1,3 @@
  kops create cluster --yes --name=10am.k8s.local --state=s3://12-am --zones=us-east-1d --node-count=2
 
-kops delete cluster --yes --name=10am.k8s.local --state=s3://12-am
+ kops delete cluster --yes --name=10am.k8s.local --state=s3://12-am
